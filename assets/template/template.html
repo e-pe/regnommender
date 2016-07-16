@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript">
+			
+			var pictPath = 		"pictures/";
+			
+		
+			function setPlantnameCategory(name,category)
+			{
+				document.getElementById("nameCategory").innerHTML=name+" - "+category;
+			}
+			
+			/*
+			value = {0,1}
+			*/
+			function setToxic(value)
+			{
+				var pictToxic = new Array(pictPath + "toxic_false.png", pictPath + "toxic_true.png");
+				document.getElementById("toxic").src = pictToxic[value];
+			}
+			
+			/*
+			name = {"money", "time", "water", "sun"}
+			value = [0,1,2,3}
+			*/
+			function setBars3(name, value)
+			{
+				if (name == "money" || name == "time" || name == "water" || name == "sun") {
+					var pict= new Array(pictPath + name +"_false.png", pictPath + name +"_true.png");
+					
+					value = 0x7 >> (3 - value);
+					document.getElementById(name+"0").src = pict[value&0x1];
+					document.getElementById(name+"1").src = pict[(value&0x2) >> 1];
+					document.getElementById(name+"2").src = pict[(value&0x4) >> 2];
+				}
+			}
+			
+			/*
+			value = [0,1,2}
+			*/
+			function setPlantPicture(value, path)
+			{
+				document.getElementById("plantPicture"+value).src = path;
+			}
+			
+			/*
+			descName = same names as in PlantData class
+			desc = your description
+			*/
+			function setDescriptions(descName,desc)
+			{
+				document.getElementById(descName).outerHTML = desc+"<div id=\""+descName+"\"></div>";
+			}
+			
+			/*
+			if all parameters are set this function can be called to remove the loader and show all elements
+			*/
+			function showFinalPage() 
+			{	
+				document.getElementById("canvasloader-container").style.visibility = "hidden";
+				document.getElementById("siteHead").style.visibility = "visible";
+				document.getElementById("siteContent").style.visibility = "visible";
+			}
+			
+			/*
+			jump to a section with correct header offset
+			*/
+			function jumpToSection(target) 
+			{	
+				sleep(1000);	/*sleep to prevent render bug in webview*/
+				
+				var target = "#"+target;
+			    var headerHeight = 105;
+	            $(window).scrollTop($(target).offset().top - headerHeight); 
+	            return false; 
+			}
+			
+			
+			function sleep(milliseconds) 
+			{
+				 var start = new Date().getTime();
+				 for (var i = 0; i < 1e7; i++) {
+					 if ((new Date().getTime() - start) > milliseconds){
+					   break;
+					 }
+				 }
+			}
+			
+			
+			/*
+			test
+			*/
+			function test() {
+				setDescriptions("description","1234");
+				setDescriptions("description","5678");
+				setDescriptions("description","9012");
+				showFinalPage();	
+			}
+
+			
+		</script>
+	
+		
+		<script src="jquery.js" type="text/javascript"></script>
+	    <script type="text/javascript">
+	    
+		//the class "goto" should be used by the links with href, so that accurate jumps are possible
+		//even after the site changes made by other functions
+	    
+	          $(function() {
+	            $(".goto").click(function() {
+	              var target = $(this).attr("href");
+				  var headerHeight = 105;
+	              $(window).scrollTop($(target).offset().top - headerHeight); 
+	              return false; 
+	            });
+	        });
+	    </script> 
+		
+		<style type="text/css">		
+			.headstyle {color:#207000;text-shadow: #888888 1px 1px 4px;}
+			.normalstyle {color:black;text-shadow: #888888 1px 1px 4px; text-align: justify;}
+			
+			.gradientbox {
+				width: 240px;
+				border: 1px solid #999999;
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;
+				border-radius: 5px;
+				padding: 0px 0px 0px 0px;
+				margin-top: 0px;
+				-moz-box-shadow: 3px 3px 3px #aaaaaa;
+				-webkit-box-shadow: 3px 3px 3px #aaaaaa;
+				box-shadow: 3px 3px 3px #aaaaaa;
+				background-image: -webkit-linear-gradient(135deg, #aaddaa, #ffffff);
+				background-image: -moz-linear-gradient(135deg, #aaddaa, #ffffff);
+				background-image: -o-linear-gradient(135deg, #aaddaa, #ffffff);
+				background-image: linear-gradient(135deg, #aaddaa, #ffffff);
+			}
+			
+			.pictShadow {
+				border: 1px solid #999999;
+				-moz-box-shadow: 3px 3px 3px #aaaaaa;
+				-webkit-box-shadow: 3px 3px 3px #aaaaaa;
+				box-shadow: 3px 3px 3px #aaaaaa;
+			}
+			
+			body   {
+				padding: 80px 0px 0px 0px;
+				margin: 15px;
+			}			
+			
+			@media screen{
+				body>div.header{
+				  position: fixed;
+				}
+			}
+			
+			.header {
+				width: 100%;
+				height: 100px;
+				padding-top: 0px;
+				padding-bottom: 0px;
+				padding-left: 15px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				
+				background: -moz-linear-gradient(top, rgba(229,229,229,1) 0%, rgba(168,168,168,1) 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(229,229,229,1)), color-stop(100%,rgba(168,168,168,1))); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, rgba(229,229,229,1) 0%,rgba(168,168,168,1) 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, rgba(229,229,229,1) 0%,rgba(168,168,168,1) 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top, rgba(229,229,229,1) 0%,rgba(168,168,168,1) 100%); /* IE10+ */
+				background: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(168,168,168,1) 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#a8a8a8',GradientType=0 ); /* IE6-9 */
+				
+				-moz-box-shadow: 3px 3px 3px #575757;
+				-webkit-box-shadow: 3px 3px 3px #575757;
+				box-shadow: 3px 3px 3px #575757;
+			}
+			
+			.backgroundMain {
+				background: -moz-linear-gradient(-45deg, rgba(229,229,229,1) 0%, rgba(168,168,168,1) 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(229,229,229,1)), color-stop(100%,rgba(168,168,168,1))); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(-45deg, rgba(229,229,229,1) 0%,rgba(168,168,168,1) 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(-45deg, rgba(229,229,229,1) 0%,rgba(168,168,168,1) 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(-45deg, rgba(229,229,229,1) 0%,rgba(168,168,168,1) 100%); /* IE10+ */
+				background: linear-gradient(135deg, rgba(229,229,229,1) 0%,rgba(168,168,168,1) 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#a8a8a8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+			}
+			
+			
+			
+			.wrapper {
+				position:absolute;
+				top:36%;
+				left:47%;
+			}
+​​
+
+		</style>
+	</head>
+	
+	<body onload="" class="backgroundMain" style="background-position:0% 0%;">
+	
+	
+	    <!-- loader ---------------------------------------------------------------------------------------------------  -->		
+		<div id="canvasloader-container" class="wrapper" style="visibility:visible;">
+			<img id="loader" src="pictures/clock.png"/>	
+		</div>		
+	    <!-- loader ---------------------------------------------------------------------------------------------------  -->		
+	
+	
+	
+		<div id="siteHead" class="header" style="visibility:hidden;">				
+			<table style="width:100%;">
+				<tr>
+					<td style="min-width:500px">
+						<h1 id="nameCategory" class="headstyle">Pflanzenname - Kategorie</h1>
+					</td>
+					<td style="width:100px">
+						<img id="toxic" src="pictures/toxic_false.png" height="60px" />
+					</td>
+					<td style="width:160px">
+						<table>
+						<tr>
+							<td style="text-align:center;width:40px">
+								<img id="money0" src="pictures/money_false.png" height="40px" />
+							</td>
+							<td style="text-align:center;width:40px">
+								<img id="money1" src="pictures/money_false.png" height="40px" />
+							</td>
+							<td style="text-align:center;width:40px">
+								<img id="money2" src="pictures/money_false.png" height="40px" />
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align:center;width:40px">
+								<img id="time0" src="pictures/time_false.png" height="40px" />
+							</td>
+							<td style="text-align:center;width:40px">
+								<img id="time1" src="pictures/time_false.png" height="40px" />
+							</td>
+							<td style="text-align:center;width:40px">
+								<img id="time2" src="pictures/time_false.png" height="40px" />
+							</td>
+						</tr>
+						</table>
+					</td>
+					<td style="width:160px">
+						<table>
+						<tr>
+							<td style="text-align:center;width:40px">
+								<img id="water0" src="pictures/water_false.png" height="40px" />
+							</td>
+							<td style="text-align:center;width:40px">
+								<img id="water1" src="pictures/water_false.png" height="40px" />
+							</td>
+							<td style="text-align:center;width:40px">
+								<img id="water2" src="pictures/water_false.png" height="40px" />
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align:center;width:40px">
+								<img id="sun0" src="pictures/sun_false.png" height="40px" />
+							</td>
+							<td style="text-align:center;width:40px">
+								<img id="sun1" src="pictures/sun_false.png" height="40px" />
+							</td>
+							<td style="text-align:center;width:40px">
+								<img id="sun2" src="pictures/sun_false.png" height="40px" />
+							</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		
+		
+		<div id = "siteContent" class="content" style="visibility:hidden;">
+			<h2 class="headstyle"><span id="Uebersicht">Übersicht</span></h2>
+			<table>
+				<tr>
+					<td style="padding-left:15px;width:300px;">
+
+						<div class="gradientbox" style="font-size:larger;">
+							<div style="margin-left:-20px">
+								<ul class="toclevel-1 tocsection-1"><a href="#Beschreibung" class="goto"><span class="tocnumber">1</span> <span class="toctext">Beschreibung</span></a></ul>
+								<ul class="toclevel-1 tocsection-2"><a href="#Anzucht" class="goto"><span class="tocnumber">2</span> <span class="toctext">Anzucht</span></a>
+										<ul class="toclevel-2 tocsection-3" style="line-height:1.8em;"><a href="#Anpflanzen" class="goto"><span class="tocnumber">2.1</span> <span class="toctext">Anpflanzen</span></a></ul>
+										<ul class="toclevel-2 tocsection-4" style="line-height:1.8em;"><a href="#Aussaat" class="goto"><span class="tocnumber">2.2</span> <span class="toctext">Aussaat</span></a></ul>
+										<ul class="toclevel-2 tocsection-5" style="line-height:1.8em;"><a href="#Steckling" class="goto"><span class="tocnumber">2.3</span> <span class="toctext">Steckling</span></a></ul>
+								</ul>
+								
+								<ul class="toclevel-2 tocsection-6"><a href="#Pflege" class="goto"><span class="tocnumber">3</span> <span class="toctext">Pflege</span></a>
+										<ul class="toclevel-2 tocsection-7" style="line-height:1.8em;"><a href="#Duengen" class="goto"><span class="tocnumber">3.1</span> <span class="toctext">Düngen</span></a></ul>
+										<ul class="toclevel-2 tocsection-8" style="line-height:1.8em;"><a href="#Giessen" class="goto"><span class="tocnumber">3.2</span> <span class="toctext">Gießen</span></a></ul>
+										<ul class="toclevel-2 tocsection-9" style="line-height:1.8em;"><a href="#Zuschneiden" class="goto"><span class="tocnumber">3.3</span> <span class="toctext">Zuschneiden</span></a></ul>
+								</ul>
+								<ul class="toclevel-1 tocsection-10"><a href="#Verarbeitung" class="goto"><span class="tocnumber">4</span> <span class="toctext">Verarbeitung</span></a></ul>
+							</div>
+						</div>
+						
+					</td>
+					<td style="">
+						<img class="pictShadow" id="plantPicture0" src="pictures/picture.png" width="250" height="300" />
+					</td >
+					<td style="">
+						<img class="pictShadow" id="plantPicture1" src="pictures/picture.png" width="250" height="300" />
+					</td >
+					<td style="">
+						<img class="pictShadow" id="plantPicture2" src="pictures/picture.png" width="250" height="300" />
+					</td >
+				</tr>
+			</table>
+			
+			<hr>
+			<h2 class="headstyle"><span id="Beschreibung">1 Beschreibung</span></h2>
+				<div class="normalstyle">
+					<div id="description"></div>
+				</div>
+			
+			<h2 class="headstyle"><span id="Anzucht">2 Anzucht</span></h2>
+			<h3 class="headstyle"><span id="Anpflanzen">2.1 Anpflanzen</span></h3>
+				<div class="normalstyle">
+					<div id="descPlant"></div>
+				</div>
+			<h3 class="headstyle"><span id="Aussaat">2.2 Aussaat</span></h3>
+				<div class="normalstyle">
+					<div id="descSeed"></div>
+				</div>
+			<h3 class="headstyle"><span id="Steckling">2.3 Steckling</span></h3>
+				<div class="normalstyle">
+					<div id="descCutting"></div>
+				</div>
+			
+			<h2 class="headstyle"><span id="Pflege">3 Pflege</span></h2>
+			<h3 class="headstyle"><span id="Duengen">3.1 Düngen</span></h3>
+				<div class="normalstyle">
+					<div id="descFertilize"></div>
+				</div>
+			<h3 class="headstyle"><span id="Giessen">3.2 Gießen</span></h3>
+				<div class="normalstyle">
+					<div id="descPour"></div>
+				</div>
+			<h3 class="headstyle"><span id="Zuschneiden">3.3 Zuschneiden</span></h3>
+				<div class="normalstyle">
+					<div id="descCUT"></div>
+				</div>
+		
+			<h2 class="headstyle"><span id="Verarbeitung">4 Verarbeitung</span></h2>
+				<div class="normalstyle">
+					<div id="descProcess"></div>
+				</div>
+		</div>
+	</body>	
+</html>

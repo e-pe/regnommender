@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+  	          android:id="@+id/preselection_empty_overlay"
+  	          android:layout_width="fill_parent"
+  	          android:layout_height="fill_parent"
+  	          android:gravity="center"
+  	          android:visibility="invisible"
+  	          android:text="@string/preselection_empty_overlay"
+  	          android:textAppearance="?android:attr/textAppearanceMedium"
+  	          android:textColor="#c4f3fb" />
+    
+    <GridView
+        android:id="@+id/grid"
+        
+        android:layoutAnimation="@anim/layout_grid_fade"
+        
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/LinearLayout1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:columnWidth="100dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:numColumns="4"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="5dp" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="false"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/textView_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/menu_label_noSelect"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/button_seed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/button_seed"
+            android:visibility="gone" 
+            />
+
+        <Button
+            android:id="@+id/button_cutting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_cutting"
+            android:visibility="gone"
+             />
+
+        <Button
+            android:id="@+id/button_exists"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_exists" 
+            android:visibility="gone"
+            />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/button_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_remove"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</RelativeLayout>

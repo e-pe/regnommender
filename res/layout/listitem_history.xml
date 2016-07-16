@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="fill_parent" 
+	android:gravity="left|center"
+	android:layout_width="wrap_content" 
+	android:paddingBottom="10dp"
+	android:paddingTop="10dp" 
+	android:paddingLeft="5dp">
+	
+	<ImageView
+        android:id="@+id/history_taskCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginRight="6dip"
+        android:src="@drawable/icon" />
+	    <LinearLayout
+	        android:orientation="vertical"
+	        android:layout_width="0dip"
+	        android:layout_weight="1"
+	        android:layout_height="fill_parent">
+			<TextView android:id="@+id/history_name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textSize="18dp"
+				android:gravity="center"/>
+			<TextView android:id="@+id/history_description" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textSize="14dp"
+				android:textColor="#0099CC"/>
+		</LinearLayout>
+	
+	    
+	<TextView android:id="@+id/history_score" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="10dp" 
+			android:layout_marginRight="20dp" 
+			android:textSize="14dp"/>
+		
+	<TextView android:id="@+id/history_doneOn" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="10dp" 
+			android:textSize="14dp"
+			android:textColor="#0099CC"/>
+	
+	 <CheckBox
+	    android:id="@+id/history_checkBox"
+	    android:layout_width="wrap_content"
+	    android:layout_height="fill_parent"
+	    android:focusable="false"
+	    android:text="@string/task_set_done" /> 
+
+</LinearLayout>

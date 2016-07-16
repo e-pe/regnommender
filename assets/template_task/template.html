@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript">
+			
+		
+			function setHeaderText(taskname)
+			{
+				document.getElementById("headerText").innerHTML="Allgemeine Infos zu "+taskname;
+			}
+			
+			function setDescription(desc)
+			{
+				document.getElementById("description").innerHTML = desc;
+			}
+			
+			/*
+			if all parameters are set this function can be called to remove the loader and show all elements
+			*/
+			function showFinalPage() 
+			{	
+				document.getElementById("canvasloader-container").style.visibility = "hidden";
+				document.getElementById("siteHead").style.visibility = "visible";
+				document.getElementById("siteContent").style.visibility = "visible";
+			}
+			
+		</script>
+	
+		
+		<style type="text/css">		
+			.headstyle {color:#207000;text-shadow: #888888 1px 1px 4px;}
+			.normalstyle {color:black;text-shadow: #888888 1px 1px 4px;}
+			
+			.gradientbox {
+				width: 240px;
+				border: 1px solid #999999;
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;
+				border-radius: 5px;
+				padding: 0px 0px 0px 0px;
+				margin-top: 0px;
+				-moz-box-shadow: 3px 3px 3px #aaaaaa;
+				-webkit-box-shadow: 3px 3px 3px #aaaaaa;
+				box-shadow: 3px 3px 3px #aaaaaa;
+				background-image: -webkit-linear-gradient(135deg, #aaddaa, #ffffff);
+				background-image: -moz-linear-gradient(135deg, #aaddaa, #ffffff);
+				background-image: -o-linear-gradient(135deg, #aaddaa, #ffffff);
+				background-image: linear-gradient(135deg, #aaddaa, #ffffff);
+			}
+			
+			html  {							/*full page height*/
+				height: 100%;
+			}
+			
+			body   {
+				padding: 80px 0px 0px 0px;
+				margin: 15px;
+			}
+			
+			#container {					/*full page height*/
+				min-height: 100%;
+				height:auto;
+			}			
+			
+			@media screen{
+				body>div.header{
+				  position: fixed;
+				}
+			}
+			
+			.header {
+				width: 100%;
+				height: 100px;
+				padding-top: 0px;
+				padding-bottom: 0px;
+				padding-left: 15px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				
+				background: -moz-linear-gradient(top, rgba(229,229,229,1) 0%, rgba(168,168,168,1) 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(229,229,229,1)), color-stop(100%,rgba(168,168,168,1))); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, rgba(229,229,229,1) 0%,rgba(168,168,168,1) 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, rgba(229,229,229,1) 0%,rgba(168,168,168,1) 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top, rgba(229,229,229,1) 0%,rgba(168,168,168,1) 100%); /* IE10+ */
+				background: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(168,168,168,1) 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#a8a8a8',GradientType=0 ); /* IE6-9 */
+				
+				-moz-box-shadow: 3px 3px 3px #575757;
+				-webkit-box-shadow: 3px 3px 3px #575757;
+				box-shadow: 3px 3px 3px #575757;
+			}
+			
+			.backgroundMain {
+				background: -moz-linear-gradient(-45deg, rgba(229,229,229,1) 0%, rgba(168,168,168,1) 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(229,229,229,1)), color-stop(100%,rgba(168,168,168,1))); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(-45deg, rgba(229,229,229,1) 0%,rgba(168,168,168,1) 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(-45deg, rgba(229,229,229,1) 0%,rgba(168,168,168,1) 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(-45deg, rgba(229,229,229,1) 0%,rgba(168,168,168,1) 100%); /* IE10+ */
+				background: linear-gradient(135deg, rgba(229,229,229,1) 0%,rgba(168,168,168,1) 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#a8a8a8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+			}
+			
+			
+			
+			.wrapper {
+				position:absolute;
+				top:36%;
+				left:47%;
+			}
+​​
+
+		</style>
+	</head>
+	
+	<body onload="" class="backgroundMain" style="background-position:0% 0%;">
+
+		    <!-- loader ---------------------------------------------------------------------------------------------------  -->		
+			<div id="canvasloader-container" class="wrapper" style="visibility:visible;">
+				<img id="loader" src="pictures/clock.png"/>	
+			</div>		
+		    <!-- loader ---------------------------------------------------------------------------------------------------  -->		
+	
+		
+		
+			<div id="siteHead" class="header" style="visibility:hidden;">
+			<table style="width:100%;">
+				<tr  style="height:100px;"> <!-- same text position as in plant infos -->
+					<td>				
+						<h1 id="headerText" class="headstyle">Allgemeine Infos zu Task</h1>
+					</td>
+				</tr>
+				</table>
+			</div>
+			
+			
+			<div id="container"> <!--  full page height --> 	
+				<div id = "siteContent" class="content" style="visibility:hidden;">
+				<br />
+						<div id="description" class="normalstyle">
+						</div>
+				</div>
+			</div>
+	</body>	
+</html>

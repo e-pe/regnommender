@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical" >
+	
+	<RelativeLayout
+	    xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical" >
+
+	    <ScrollView
+	        xmlns:android="http://schemas.android.com/apk/res/android"
+	        android:id="@+id/scroll"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:layout_alignParentTop="true">
+
+	        <LinearLayout
+	            xmlns:android="http://schemas.android.com/apk/res/android"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical" >
+
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="30dp"
+	                android:layout_marginLeft="10dp"
+	                android:layout_marginRight="5dp"
+	                android:textSize="12pt"
+	                android:text="@string/menu_label_gardenOld" />
+
+	            <GridView 
+	                xmlns:android="http://schemas.android.com/apk/res/android"
+	                android:id="@+id/grid_current"
+	                android:layout_width="wrap_content"
+	                android:layout_height="390dp"
+	                android:scrollbars="horizontal"
+	                android:layout_marginTop="10dp"
+	                android:layout_marginLeft="10dp"
+	                android:layout_marginRight="5dp"
+				    android:numColumns="4"
+				    android:horizontalSpacing="90dp"
+				    android:verticalSpacing="20dp"
+				    android:columnWidth="440dp"
+				    android:stretchMode="columnWidth"
+				    android:gravity="center" />
+
+
+	            <ImageView
+				    xmlns:android="http://schemas.android.com/apk/res/android"
+				    android:src="@android:drawable/divider_horizontal_dark"
+				    android:layout_width="fill_parent"
+				    android:layout_height="6dp"
+				    android:scaleType="fitXY"
+				    android:layout_marginTop="20dp"
+				    android:paddingLeft="5dp"
+				    android:paddingRight="7dp"
+				    android:paddingBottom="2dp"
+				    android:paddingTop="2dp" />
+	            
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="10dp"
+	                android:layout_marginLeft="10dp"
+	                android:layout_marginRight="5dp"
+	                android:textSize="12pt"
+	                android:text="@string/menu_label_gardenNew" />
+
+	            <GridView 
+	                xmlns:android="http://schemas.android.com/apk/res/android"
+	                android:id="@+id/grid_preference"
+	                android:layout_width="wrap_content"
+	                android:layout_height="390dp"
+	                android:scrollbars="horizontal"
+	                android:layout_marginTop="10dp"
+	                android:layout_marginLeft="10dp"
+	                android:layout_marginRight="5dp"
+				    android:numColumns="4"
+				    android:horizontalSpacing="90dp"
+				    android:verticalSpacing="20dp"
+				    android:stretchMode="columnWidth"
+				    android:gravity="center" />
+	            
+	            <ImageView
+				    xmlns:android="http://schemas.android.com/apk/res/android"
+				    android:src="@android:drawable/divider_horizontal_dark"
+				    android:layout_width="fill_parent"
+				    android:layout_height="10dp"
+				    android:scaleType="fitXY"
+				    android:layout_marginTop="25dp"
+				    android:layout_marginBottom="25dp"
+				    android:paddingLeft="5dp"
+				    android:paddingRight="7dp"
+				    android:paddingBottom="2dp"
+				    android:paddingTop="2dp" />
+
+	            <!-- 
+	            <LinearLayout
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:layout_marginLeft="30dp"
+	                android:orientation="horizontal" >
+
+	                <TextView
+	                    android:id="@+id/name"
+	                    android:layout_width="230dp"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginLeft="0dp"
+	                    android:text="@string/menu_label_name" 
+	                    android:textSize="13pt" />
+
+	                <EditText
+	                    android:id="@+id/editName"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:ems="12"
+	                    android:inputType="textPersonName"
+	                    android:text=""
+	                    android:textSize="14pt" >
+	                </EditText>
+	                
+	            </LinearLayout> -->
+	           
+	           <!--  
+	            <LinearLayout
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:orientation="horizontal"
+	                android:layout_marginTop="50dp"
+	                android:layout_marginLeft="30dp" >
+
+	                <TextView
+	                    android:id="@+id/strain"
+	                    android:layout_width="220dp"
+	                    android:layout_height="wrap_content"
+	                    android:gravity="left"
+	                    android:paddingRight="10dp"
+	                    android:layout_marginLeft="0dp"
+	                    android:text="@string/seekbar_strain"
+	                    android:textSize="12pt" />
+
+	                <SeekBar
+	                    android:id="@+id/seekBar_strain"
+	                    android:layout_width="500dp"
+	                    android:layout_height="wrap_content"
+	                    android:max="4"
+	                    android:progress="2" />
+	            </LinearLayout> -->
+
+	            <LinearLayout
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:orientation="horizontal"
+	                android:layout_marginTop="20dp"
+	                android:layout_marginLeft="30dp" >
+
+	                <TextView
+	                    android:id="@+id/time"
+	                    android:layout_width="220dp"
+	                    android:layout_height="wrap_content"
+	                    android:gravity="left"
+	                    android:layout_marginLeft="0dp"
+	                    android:paddingRight="10dp"
+	                    android:text="@string/seekbar_time"
+	                    android:textSize="12pt" />
+
+	                <SeekBar
+	                    android:id="@+id/seekBar_time"
+	                    android:layout_width="500dp"
+	                    android:layout_height="wrap_content"
+	                    android:background="@drawable/seekbar_3ticks"
+	                    android:max="2" />
+	                
+	                <TextView 
+	                    android:id="@+id/value_time"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginLeft="10dp"
+	                    android:text=""
+	                    android:textSize="11pt" />
+	                
+	            </LinearLayout>
+
+	            <LinearLayout
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:orientation="horizontal"
+	                android:layout_marginTop="20dp"
+	                android:layout_marginLeft="30dp" >
+
+	                <TextView
+	                    android:id="@+id/finance"
+	                    android:layout_width="220dp"
+	                    android:layout_height="wrap_content"
+	                    android:gravity="left"
+	                    android:paddingRight="10dp"
+	                    android:layout_marginLeft="0dp"
+	                    android:text="@string/seekbar_finance"
+	                    android:textSize="12pt" />
+
+	                <SeekBar
+	                    android:id="@+id/seekBar_finance"
+	                    android:layout_width="500dp"
+	                    android:layout_height="wrap_content"
+	                    android:background="@drawable/seekbar_3ticks"
+	                    android:max="2" />
+	                
+	                <TextView 
+	                    android:id="@+id/value_finance"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginLeft="10dp"
+	                    android:text=""
+	                    android:textSize="11pt" />
+	                    
+	            </LinearLayout>
+	            
+	            <LinearLayout
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:layout_marginTop="30dp"
+	                android:layout_marginLeft="30dp"
+	                android:layout_marginRight="5dp"
+	                android:orientation="horizontal" >
+	                
+	                <TextView
+	                    android:id="@+id/gps"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginLeft="0dp"
+	                    android:text="@string/menu_label_gardenLocation" 
+	                    android:textSize="12pt" />
+	                
+	                <EditText
+	                    android:id="@+id/editGPS"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:ems="13"
+	                    android:inputType="text"
+	                    android:textSize="12pt" >
+	                </EditText>
+					
+					<Button
+			            android:id="@+id/gps_register"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:gravity="center"
+			            android:layout_marginLeft="10dp"
+			            android:padding="15dp"
+			            android:text="@string/button_gps"
+			           	android:textSize="11pt" />
+
+					<ProgressBar
+					    android:id="@+id/progressBarGPS"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:visibility="gone" />
+										
+				</LinearLayout>
+
+	            <CheckBox
+	                android:id="@+id/checkBox_toxic"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="30dp"
+	                android:layout_marginLeft="30dp"
+	                android:gravity="center"
+	                android:textSize="12pt"
+	                android:textColor="#bcbcbc"
+	                android:text="@string/checkbox_toxic" />
+
+	            <CheckBox
+	                android:id="@+id/checkBox_products"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="10dp"
+	                android:layout_marginLeft="30dp"
+	                android:gravity="center"
+	                android:textSize="12pt"
+	                android:textColor="#bcbcbc"
+	                android:text="@string/checkbox_products" />
+	            
+	            <TextView
+	                    android:id="@+id/reminder"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="3"
+	                    android:gravity="left"
+	                    android:layout_marginTop="50dp"
+	                    android:layout_marginLeft="30dp"
+	                    android:paddingRight="10dp"
+	                    android:text="@string/menu_label_reminder"
+	                    android:textSize="12pt" />
+	            
+	            <LinearLayout
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:orientation="horizontal"
+	                android:layout_marginTop="10dp"
+	                android:layout_marginLeft="30dp"
+	                android:layout_marginBottom="30dp" >
+	                
+	                <TextView 
+	                    android:id="@+id/nie"
+	                    android:layout_width="220dp"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:layout_marginLeft="0dp"
+	                    android:paddingRight="10dp"
+	                    android:text="@string/menu_label_never" 
+	                    android:textSize="12pt"
+	                    android:gravity="right" />
+	                
+	                <SeekBar
+		                android:id="@+id/seekBar_reminder"
+		                android:layout_width="500dp"
+		                android:layout_height="wrap_content"
+		                android:layout_weight="2"
+		                android:background="@drawable/seekbar_5ticks"
+		                android:max="4"
+		                android:progress="4" />
+	                
+	                <TextView 
+	                    android:id="@+id/häufig"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:paddingLeft="10dp"
+	                    android:layout_marginRight="30dp"
+	                    android:text="@string/menu_label_frequently" 
+	                    android:textSize="12pt"/>
+	                
+	            </LinearLayout>
+	            
+	            <LinearLayout
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:orientation="horizontal" >
+
+	                <Switch
+	                    android:id="@+id/switch_service"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="100dp"
+	                    android:text="@string/service"
+	                    android:layout_marginLeft="36dp"
+	                    android:textSize="11pt"
+	                    android:textColor="#bcbcbc"
+	                    />
+	            	<TextView
+	            	    android:id="@+id/text_stop_service"
+	            	    android:layout_width="wrap_content"
+	            	    android:layout_height="wrap_content"
+	            	    android:layout_marginLeft="52dp"
+	            	    android:textSize="11pt"
+	                	android:text="@string/text_stop_service"/>
+	            
+	            </LinearLayout>
+	            
+	            <LinearLayout
+	                android:layout_width="wrap_content"
+	                android:layout_height="100dp"
+	                android:layout_weight="1"
+	                android:orientation="horizontal" >
+	            	<Button
+			            android:id="@+id/button_showWeatherData"
+			            android:layout_width="220dp"
+			            android:layout_height="wrap_content"
+			            android:gravity="center"
+			            android:layout_marginLeft="30dp"
+			            android:padding="15dp"
+			            android:text="@string/button_showWweatherData"
+			           	android:textSize="11pt" />
+	            	<TextView 
+	            	    android:id="@+id/text_weather_data"
+	            	    android:layout_width="wrap_content"
+	            	    android:layout_height="wrap_content"
+	            	    android:layout_marginLeft="30dp"
+	            	    android:textSize="11pt"
+	                	android:text="@string/text_weather_data"/>
+	            
+	            </LinearLayout>
+	            
+	            <LinearLayout
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:orientation="horizontal" >
+	            	<Button
+			            android:id="@+id/button_exportDB"
+			            android:layout_width="220dp"
+			            android:layout_height="wrap_content"
+			            android:gravity="center"
+			            android:layout_marginLeft="30dp"
+			            android:padding="15dp"
+			            android:text="@string/button_exportDB"
+			           	android:textSize="11pt" />
+	            	<TextView 
+	            	    android:id="@+id/text_exportDB"
+	            	    android:layout_width="wrap_content"
+	            	    android:layout_height="wrap_content"
+	            	    android:layout_marginLeft="30dp"
+	            	    android:textSize="11pt"
+	                	android:text="@string/text_exportDB"/>
+	            
+	            </LinearLayout>
+	            
+	            <LinearLayout
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:orientation="horizontal" >
+	            	<Button
+			            android:id="@+id/button_importDB"
+			            android:layout_width="220dp"
+			            android:layout_height="wrap_content"
+			            android:gravity="center"
+			            android:layout_marginLeft="30dp"
+			            android:padding="15dp"
+			            android:text="@string/button_importDB"
+			           	android:textSize="11pt" />
+	            	<TextView 
+	            	    android:id="@+id/text_importDB"
+	            	    android:layout_width="wrap_content"
+	            	    android:layout_height="wrap_content"
+	            	    android:layout_marginLeft="30dp"
+	            	    android:textSize="11pt"
+	                	android:text="@string/text_importDB"/>
+	            
+	            </LinearLayout>
+	            
+	            
+	            
+	        </LinearLayout>
+	    </ScrollView>
+
+	    
+	</RelativeLayout>
+
+</LinearLayout>

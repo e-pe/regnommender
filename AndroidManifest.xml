@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="uni.augsburg.regnommender"
+    android:versionCode="1"
+    android:versionName="1.0" 
+    >
+
+    <uses-sdk android:minSdkVersion="15" />
+    
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission> 
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	
+	<uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false" />
+
+    <application
+        android:icon="@drawable/regnomender_icon"
+        android:label="@string/app_name">
+        <activity
+            android:name=".presentation.fragments.SplashScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         <activity
+            android:name=".presentation.fragments.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:launchMode="singleTop"
+             > 
+        </activity>
+	    <activity 
+	        android:name=".presentation.FileDialog"
+	        android:screenOrientation="landscape" >   
+	    </activity>
+         
+        <provider 
+            android:name=".dataAccess.GardenProvider"
+            android:authorities="uni.augsburg.regnommender.dataAccess.GardenProvider"/>
+        
+        <service android:enabled="true" android:name=".core.BackgroundService" />
+    </application>
+
+</manifest>

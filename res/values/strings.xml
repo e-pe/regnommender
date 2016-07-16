@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ReGNOMmender</string>
+
+    <string name="webviewButtonLabel">Zurück</string>
+    <string name="webviewButton2Label">Erledigt!</string>
+    <string name="webviewTaskButtonLabel">OK</string>
+    
+    <string name="button_ok"> OK </string>
+    <string name="button_yes"> Ja </string>
+    <string name="button_no"> Nein </string>
+    <string name="button_done">Fertig</string>
+    
+    <string name="task_set_done">Erledigt</string>
+
+    
+    <!-- Tasknames for task description / website section mapping (see uni/augsburg/regnommender/presentation/Helpers) -->
+    <string name="taskname_pour">Gießen</string>
+    <string name="taskname_fertilize">Düngen</string>
+    <string name="taskname_plant">Anpflanzen</string>
+    <string name="taskname_seed">Aussäen</string>
+    <string name="taskname_dig">Umgraben</string>
+    <string name="taskname_process">Verarbeiten</string>
+    <string name="taskname_cutting">Steckling</string>
+    <string name="taskname_remove">Unkraut jäten</string>
+    <string name="taskname_cut">Zuschneiden</string>
+    <string name="taskname_mowLawn">Rasenmähen</string>
+    
+    
+    <!-- BackgroundService, RemindTask & Notifications -->
+    <string name="notification_text_type4">Dein Garten braucht dich! Dringend ausführen: </string>
+    <string name="notification_text_type3">Sollte sehr bald ausgeführt werden: </string>
+    <string name="notification_text_type2">Sollte bald ausgeführt werden: </string>
+    <string name="notification_text_type1">Steht demnächst an: </string>
+    <string name="notification_text_new_tasks">Neue Aufgabe(n): </string>
+    
+    <string name="service_has_stopped">Dienst wurde beendet.</string>
+    
+    
+    <!-- Inventory -->
+    <string name="menu_label_noSelect">Zum Selektieren Pflanze(n) bitte antippen. Für Infos zu einer Pflanze bitte auf das entsprechende Info-Icon tippen.</string>
+    <string name="menu_label_select">Auswahl hinzufügen als: </string>
+    <string name="button_seed">Aussaat</string>
+    <string name="button_cutting">Steckling</string>
+    <string name="button_exists">Vorhanden</string>
+    <string name="button_remove">Entfernen</string>
+    
+    <string name="preselection_empty_overlay">Zu ihrer Auswahl des bisherigen Gartens konnten keine passenden Pflanzen gefunden werden.\nDeaktivieren Sie den Filter am rechten Rand, um das vollständige Pflanzensortiment anzuzeigen."</string>
+    
+    <!-- Detection of not practicable adding methods -->
+    <string name="isnotPracticableDetection">Nicht praktikabel.</string>
+    
+    
+    <!-- Inventory filter -->
+    <string name ="filter_inventory_title">Filtern nach:</string>
+    <string name ="filter_inventory_finance">Finanzaufwand</string>
+    <string name ="filter_inventory_existing">Bereits vorhanden</string>
+    <string name ="filter_inventory_seed">Aussaat</string>
+    <string name ="filter_inventory_cutting">Steckling</string>
+    <string name ="filter_inventory_preselection">Vorauswahl</string>
+    
+    
+    <!-- Tasks / History -->
+    <string name ="task_done">Möchten Sie diesen Task als erledigt kennzeichnen?</string>
+    <string name ="task_undone">Möchten Sie diesen Task wieder als unerledigt kennzeichnen?</string>
+    <string name="tasklist_empty_overlay">Zurzeit stehen keine Aufgaben an.</string>
+    <string name="history_empty_overlay">Bisher wurden keine Aufgaben erledigt.</string>
+    
+    <!-- Settings -->
+    <string name="menu_label_gardenOld">Mein Garten bisher:</string>
+    <string name="toast_gardenOld_properties">Aktueller Zustand des Gartens: </string>
+    <string name="menu_label_gardenNew">Mein Wunschgarten:</string>
+    <string name="toast_gardenNew_properties">Eigenschaften meines Wunschgartens: </string>
+    <string name="menu_label_name">Mein Name:</string>
+    <string name="seekbar_strain">Kraftaufwand</string>
+    <string name="seekbar_time">Zeitaufwand</string>
+    <string name="seekbar_finance">Finanz. Aufwand</string>
+    <string name="menu_label_gardenLocation">Standort des Gartens:</string>
+    <string name="button_gps">GPS verwenden</string>
+    <string name="checkbox_toxic">Warnung bei giftigen Pflanzen anzeigen</string>
+    <string name="checkbox_products">Ich möchte Gartenerzeugnisse verarbeiten</string>
+    <string name="menu_label_reminder">Benachrichtigungen anzeigen:</string>
+    <string name="menu_label_never">nie</string>
+    <string name="menu_label_frequently">häufig</string>
+    <string name="menu_label_low">gering</string>
+    <string name="menu_label_middle">mittel</string>
+    <string name="menu_label_high">hoch</string>
+    <string name="service">Dienst</string>
+    <string name="service_started">Dienst läuft: Sie werden über Aufgaben benachrichtigt</string>
+    <string name="button_showWweatherData">Wetter anzeigen</string>
+    
+    <string name="toast_fail_gps">GPS timeout: es konnten keine GPS-Daten empfangen werden!</string>
+    <string name="toast_try_gps">Es wird nun für 30 Sekunden versucht GPS-Daten zu erhalten ...</string>
+    <string name ="button_exportDB">DB exportieren</string>
+    <string name ="text_exportDB">Den aktuellen Datenbankzustand exportieren.</string>
+    <string name ="button_importDB">DB importieren</string>
+    <string name ="text_importDB">Einen Datenbankzustand importieren.</string>
+    <string name="text_stop_service">Den Dienst, der für die Task-Generierung zuständig ist, stoppen / starten</string>
+	<string name="text_weather_data">Wetterdaten zum aktuellen Standort anzeigen</string>
+	
+	<string name="weather_dialog_title">Wetter von OpenWeatherMap.org</string>
+	<!-- String.format %s replacement - specify position %1$s and % = %% -->
+    <string name="weather_dialog_message">Zeit der Messung: \t\t\t%1$s\nID der Station: \t\t\t\t\t%2$s\nName der Station: \t\t\t%3$s\n\nTemperatur: \t\t\t\t\t%4$s °C\nTemperatur min: \t\t\t\t%5$s °C\nTemperatur max: \t\t\t%6$s °C\n\nLuftfeuchtigkeit:  \t\t\t\t%7$s %%\n\nWind-Geschwindigkeit: \t%8$s m/s | %9$s km/h\nWind-Richtung: \t\t\t\t%10$s\n\nLuftdruck: \t\t\t\t\t\t%11$s  hPa\n\nNiederschlag/Stunde: \t\t%12$s mm</string>
+    <string name="weather_dialog_error_message">Beim Ermitteln der aktuellen Wetterdaten ist ein Fehler aufgetreten!\n\nBitte überprüfen Sie, ob eine funktionierende Internetverbindung besteht. Falls Sie einen Ortsnamen eingegeben haben, überprüfen Sie bitte die korrekte Schreibweise.\nEventuell gibt es zu diesem Ort auch keine Wetterdaten, testen Sie daher bitte größere Städte in der Umgebung oder besuchen Sie die Website des Providers:\"openweathermap.org\".</string>
+    
+    <string name="file_dialog_new">Neu</string>
+    <string name="file_dialog_select">Auswählen</string>
+    <string name="file_dialog_cancel">Abbrechen</string>
+    <string name="file_dialog_create">Erstellen</string>
+    <string name="file_dialog_filename">Dateiname</string>
+    <string name="file_dialog_noData">Keine Daten</string>
+    <string name="file_dialog_location">Ort</string>
+    <string name="file_dialog_folder_cannotBeRead">Ordner kann nicht gelesen werden!</string>
+    
+    
+    <!-- Tutorial -->
+    <string name ="tutorial_titel_1">Tutorial - Schritt 1 / 3</string>
+    <string name ="tutorial_titel_2">Tutorial - Schritt 2 / 3</string>
+    <string name ="tutorial_titel_3">Tutorial - Schritt 3 / 3</string>
+    
+    <string name="tutorial_popup_1">Herzlich Willkommen zur ReGNOMmender-App für Android!\n\nIn den nächsten Schritten wird Ihnen eine kurze Einführung in die Funktionsweise der Anwendung gegeben.\nSie können dieses Tutorial vorzeitig mit einem Klick auf \n\"Tutorial beenden\" oben in der Titelleiste beenden.\n\nIn der nachfolgenden Ansicht werden Sie gebeten, Informationen über Ihren bisherigen Garten, ihre Präferenzen und weitere Details einzugeben. Anhand Ihrer Angaben werden Ihnen im weiteren Verlauf Pflanzen und Tasks vorgeschlagen. \n\nBesonders wichtig ist dabei die Eingabe des bisherigen Gartens und des Wunschgartens: \nBerühren Sie dazu bitte die Bilder, die Ihrem bisherigen Garten bzw. Ihrem Wunschgarten am Besten entsprechen (Mehrfachauswahl ist möglich).\n\nJe genauer die Eingaben, desto hilfreicher ist das Programm!</string>
+	<string name="tutorial_popup_2">Bitte wählen Sie in der nachfolgenden Ansicht die Pflanzen aus, die sie bereits besitzen bzw. welche Sie gerne einpflanzen möchten.\n\nBesitzen Sie die Pflanze bereits, so klicken Sie die entsprechende Pflanzen an und wählen Sie \"Vorhanden\". \n\nWenn Sie die Pflanze säen oder einen Steckling einpflanzen wollen, wählen Sie bitte \"Aussaat\" oder \"Steckling\".\n\nAnhand Ihrer Angaben in der Kategorie \"Garten bisher\" wurden Ihnen einige Pflanzen vorgeschlagen (\"Vorauswahl\"). Diese können Sie ins Inventar hinzufügen, oder wieder de-selektieren.</string>	
+	<string name="tutorial_popup_3">In der Hauptansicht werden Ihnen die Aufgaben angezeigt, die zu erledigen sind.\n\nIst eine Aufgabe abgearbeitet, können sie diese auf \"Erledigt\" setzen. Erledigte Aufgaben werden mit einer Punktebewertung belohnt, die sich zu einer Gesamtpunktanzahl addieren und im Verlauf eingesehen werden können.\n\n\nHiermit ist das Tutorial abgeschlossen.\nWir wünschen Ihnen viel Freude bei der Verwendung dieser App!</string>
+
+	
+	<!-- Help overlays -->
+	<string name="help_overlay_tasks_arrow_text">Aktuelle Aufgaben</string>
+	<string name="help_overlay_tasks_text">In diesem Bereich werden alle zu erledigenden Aufgaben aufgelistet.\n\nBeim Berühren einer Aufgabe werden Details zu dieser angezeigt.\n\nEine als \"Erledigt\" gekennzeichnete Aufgabe kann unter dem Tab \"Verlauf\" eingesehen werden.\n\nDie Aufgaben sind nach Datum sortiert. Die Dringlichkeit wird mittels eines unterschiedlich gefärbten und großen Warndreiecks symbolisiert.</string>
+
+	<string name="help_overlay_history_arrow_text">Abgeschlossene Aufgaben</string>
+	<string name="help_overlay_history_text">In diesem Bereich werden alle erledigten Aufgaben angezeigt.\n\nDiese können im Detail durch Anklicken der jeweiligen Aufgabe eingesehen werden.\n\nFür erledigte Aufgaben erhalten Sie Punkte. Ihre Gesamtpunktzahl und Stufe können am unteren Bildschirmrand ermittelt werden.\n\nFalls ein Tasks versehentlich als \"Erledigt\" gekennzeichnet wurde, kann dies hier wieder rückgängig gemacht werden.</string>
+	
+	<string name="help_overlay_inventory_arrow_text">Verwaltung der Pflanzen</string>
+	<string name="help_overlay_inventory_text">Hier werden alle Pflanzen angezeigt, die der App bekannt sind.\n\nNach Berühren einer Pflanze können Sie die Pflanze ...\n\n- ... als \"vorhanden\" markieren, wenn diese bereits in Ihrem Garten eingepflanzt ist\n\n- ... als \"Steckling\" oder \"Aussaat\" markieren, wenn Sie die Pflanze in Ihren Garten einpflanzen wollen und dabei Hilfestellungen benötigen\n\n- ... \"entfernen\", wenn sich die Pflanze nicht mehr in Ihrem Garten befindet.</string>
+
+	<string name="help_overlay_settings_arrow_text">Einstellungen</string>
+	<string name="help_overlay_settings_text">Hier können Sie verschiedene Einstellungen vornehmen, die es der App erlauben, Sie bestmöglichst bei der Gartenverwaltung zu unterstützen.\n\nIn der Kategorie \"Mein Garten bisher\" können Sie die Bilder markieren, die am ehesten dem aktuellen Zustand Ihres Gartens entsprechen.\n\nUnter \"Mein Wunschgarten\" wählen Sie die Bilder aus, welche die Eigenschaften Ihres Wunschgartens am Besten beschreiben.\n\nDurch die Angabe des gewünschten Zeit- und finanziellen Aufwands können die Aufgaben besser auf Ihre Bedürfnisse angepasst werden.</string>
+</resources>

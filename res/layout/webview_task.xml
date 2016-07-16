@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:layout_gravity="right"
+    android:fitsSystemWindows="false"
+    android:minWidth="1024dp"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="right"
+        android:minWidth="1024dp" >
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/LinearLayout2" >
+
+            <WebView
+                android:id="@+id/webview_task"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/gridView"
+                android:stretchMode="columnWidth" />
+
+            <GridView
+                android:id="@+id/gridView"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:columnWidth="130dp"
+                android:gravity="center"
+                android:numColumns="1"
+                android:paddingTop="10dp"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="10dp" >
+            </GridView>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:weightSum="1.0" >
+
+            <Button
+                android:id="@+id/webview_task_button1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".50"
+                android:text="@string/webviewButtonLabel" />
+
+            <Button
+                android:id="@+id/webview_task_button2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".50"
+                android:text="@string/webviewButton2Label" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
